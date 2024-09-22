@@ -13,14 +13,14 @@ int main()
 	scanf("%c %d %d %d",&goods,&channel,&univalence,&number); 
 	
 	while(getchar()!='\n');                 //清理一下缓冲区 
-	int umbrella;							//umbrella表示需要买几个 
+	int need;							//umbrella表示需要买几个 
 	
 	printf("请输入需要购买的货物、货物所在通道以及购买数量:\n");
-	scanf("%c %d %d",&goods,&channel,&umbrella) ;
+	scanf("%c %d %d",&goods,&channel,&need) ;
 
 	int i;            					 //i表示单次投币金额 
 	int money;        					 //money表示已经输入的总金额 
-	int amount= umbrella* univalence;          //amount表示商品总价格 
+	int amount= need* univalence;          //amount表示商品总价格 
 	printf("注意:只能输入1元、2元和5元\n");
 	for(money=0; money<amount;money=money+i){
 		printf("请输入单次投币金额；\n");
@@ -35,9 +35,11 @@ int main()
 	scanf("%c",&c);
 	if (c=='y'){
 		choice=1;
-		}
-	else if(c=='n'){
+	}else if(c=='n'){
 		return 0;
+	}else{
+		printf("输入错误，请重启系统。\n");
+		break;
 	}
 }
 	
