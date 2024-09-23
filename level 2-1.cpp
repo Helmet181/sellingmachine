@@ -15,15 +15,17 @@ int main()
 	int need;			 //need表示顾客需求 
 	while(stage==1){
 	printf ("请依次输入货物种类、通道编号、货物单价以及货物个数:\n");
-	scanf("%c %d %d %d",&goods,&channel,&univalence,&number);
+	
+	scanf(" %c %d %d %d",&goods,&channel,&univalence,&number);
+	while(getchar()!='\n');
 	if(goods==65){
 		b[1]=univalence;
-		 while(getchar()!='\n');
+    while(getchar()!='\n');
 	} else if(goods==66){
 		b[2]=univalence;
-		 while(getchar()!='\n');
+    while(getchar()!='\n')
+	
 	}
-	while(getchar()!='\n');  
 	printf("请输入y开始摆放，输入n开始购买:\n");
 	
 	scanf("%c",&c);
@@ -40,7 +42,7 @@ int main()
 	while(stage==2){
 	
 	printf("请输入需要购买的货物、货物所在通道以及购买数量:\n");
-	scanf("%c %d %d",&goods,&channel,&need) ;
+	scanf(" %c %d %d",&goods,&channel,&need) ;
 	 while(getchar()!='\n');
 	if(goods==65){
 		amount+=need*b[1];
@@ -73,7 +75,7 @@ int main()
 	 while(getchar()!='\n');
 	 int change=money-amount;
 	 printf("找零%d元\n",change);
-	//存在问题；购买数量实在stage=2阶段输入，但是 单价在stage=1阶段没有地方储存 
+
 	
 	
 	
